@@ -1,0 +1,73 @@
+/* CSS for the credit card design */
+/* .background {
+  background-image: url("./src/assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+.flip-card {
+  background-color: transparent;
+  width: 240px;
+  height: 154px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  /* box-shadow: rgba(255, 254, 254, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset; */
+  /* background-color: #fffcfc; */
+  border: 1px solid white;
+}
+
+.flip-card-back {
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(245, 243, 243, 0.3) 0px 7px 13px -3px, rgba(5, 5, 8, 0.3) 0px -1px 0px inset; */
+  /* background-color: #171717; */
+  transform: rotateY(180deg);
+  border: 1px solid white;
+}
+
+.strip {
+  position: absolute;
+  /* background-color: black; */
+  width: 19em;
+  height: 2em;
+  top: 2.4em;
+  background: repeating-linear-gradient(
+    45deg,
+    #fffbfb,
+    #303030 10px,
+    #b6b2b2 10px,
+    #202020 20px
+  );
+}
+
+.mstrip {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 9em;
+  height: 0.8em;
+  top: 5em;
+  left: 0.8em;
+  border-radius: 2.5px;
+}
