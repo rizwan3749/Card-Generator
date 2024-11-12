@@ -86,10 +86,10 @@ const CardDisplay = () => {
             className={`w-48 p-4 ${
               card.style
             } text-white rounded-lg shadow-lg transform transition-transform duration-300 hover:-translate-y-2 ${
-              selectedCard === card.title ? "border-4 border-white" : "hidden"
+              selectedCard === card.title ? "border-2 w-72 h-42 rounded-2xl border-white" : "hidden"
             }`}
           >
-            <div className="flip-card mt-6">
+            <div className="flip-card mt-6 ml-2">
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <p className="heading_8264">{card.title}</p>
@@ -101,7 +101,7 @@ const CardDisplay = () => {
                   <p className="name">BRUCE WAYNE</p>
                 </div>
                 <div className="flip-card-back">
-                  <div className="strip"></div>
+                  <div className="Anotherstrip"></div>
                   <div className="mstrip"></div>
                   <div className="sstrip">
                     <p className="code">{cvv || "***"}</p>
