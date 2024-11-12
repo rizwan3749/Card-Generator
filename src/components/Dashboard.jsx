@@ -2,6 +2,7 @@ import React from "react";
 // import "./LandingPage.css"; 
 import { CiCreditCard1 } from "react-icons/ci";
 import User from "./User";
+import Collection from "./Collection";
 
 const LandingPage = () => {
   return (
@@ -88,6 +89,9 @@ const LandingPage = () => {
       {/* User Component */}
       <div>
         <User />
+      </div>
+      <div>
+        <Collection />
       </div>
 
       {/* Footer */}

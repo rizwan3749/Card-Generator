@@ -35,21 +35,16 @@
 }
 
 .flip-card-front {
-  /* box-shadow: rgba(255, 254, 254, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset; */
-  /* background-color: #fffcfc; */
   border: 1px solid white;
 }
 
 .flip-card-back {
-  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(245, 243, 243, 0.3) 0px 7px 13px -3px, rgba(5, 5, 8, 0.3) 0px -1px 0px inset; */
-  /* background-color: #171717; */
   transform: rotateY(180deg);
   border: 1px solid white;
 }
 
 .strip {
   position: absolute;
-  /* background-color: black; */
   width: 19em;
   height: 2em;
   top: 2.4em;
@@ -71,3 +66,248 @@
   left: 0.8em;
   border-radius: 2.5px;
 }
+
+ 
+figure {
+  position: relative;
+  overflow: visible;  
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;  
+  margin: auto;
+  text-align: center;
+}
+  
+figure img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;  
+}
+
+ 
+figure:hover img {
+  transform: scale(2);  
+  position: relative;  
+  z-index: 10; 
+  
+}
+  
+figcaption {
+  position: absolute;
+  bottom: -41px;
+  left: px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: opacity 0.5s ease;
+}
+
+ 
+figure:hover figcaption {
+  opacity: 0;  
+}
+
+
+/* from.css */
+
+
+
+.card-form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-form label {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.card-form select,
+.card-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+.card-form select:focus,
+.card-form input:focus {
+    border: 1px solid #007bff;
+}
+
+.card-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-form button:hover {
+    background-color: #0056b3;
+}
+
+.card-display {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    width: 200px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+
+/* Additional styling for .bottom and other classes follows the initial setup */
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+   background-color: #171717;
+   color: white;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #171717;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.logo, .heading_8264, .number, .valid_thru, .date_8264, .name,
+.strip, .mstrip, .sstrip, .contactless, .chip {
+  position: absolute;
+}
+
+.logo {
+  top: 6.8em;
+  left: 11.7em;
+}
+
+.heading_8264 {
+  letter-spacing: 0.2em;
+  font-size: 0.5em;
+  top: 2em;
+  left: 18.6em;
+}
+
+.number {
+  font-weight: bold;
+  font-size: 0.6em;
+  top: 8.3em;
+  left: 1.6em;
+}
+
+.valid_thru {
+  font-weight: bold;
+  top: 6.358em;
+  font-size: 0.1em;
+  left: 14.03em;
+}
+
+.date_8264 {
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 13.6em;
+  left: 3.2em;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 16.1em;
+  left: 2em;
+}
+
+.strip {
+  background-color: black;
+  width: 14.9em;
+  height: 1.5em;
+  top: 2.4em;
+  background: repeating-linear-gradient(
+    45deg,
+    #303030,
+    #303030 10px,
+    #202020 10px,
+    #202020 20px
+  );
+}
+
+.mstrip {
+  background-color: rgb(255, 255, 255);
+  width: 8em;
+  height: 0.8em;
+  top: 5em;
+  left: 0.8em;
+  border-radius: 2.5px;
+}
+
+.sstrip {
+  width: 4.1em;
+  height: 0.8em;
+  top: 4.5em;
+  left: 10em;
+  border-radius: 2.5px;
+}
+
+.contactless {
+  top: 3.5em;
+  left: 12.4em;
+}
+
+.chip {
+  top: 2.3em;
+  left: 1.5em;
+}
+
+

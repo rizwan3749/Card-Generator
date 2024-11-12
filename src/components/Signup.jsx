@@ -48,22 +48,17 @@ const Signup = () => {
 
   const handleGoogleLogin = () => {
     alert("Google Login clicked");
-    // Add Google login functionality here if needed
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-800 to-gray-900 ">
-      <Link to="/">
-        <p className="text-white">Back to Dashboard</p>
-      </Link>
-      <div
-        className={`backdrop-blur-lg bg-white/30 p-8 border rounded-lg shadow-lg max-w-sm w-full transition-all duration-700 transform ${
-          isSigningIn
-            ? "animate-flip-x rotate-y-180"
-            : "animate-flip-y opacity-100"
-        }`}
-      >
-        <h2 className="text-2xl font-semibold  text-white text-center mb-6">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-800 to-gray-900">
+      <div className="absolute top-4 left-4">
+        <Link to="/">
+          <p className="text-white">--Back to Dashboard</p>
+        </Link>
+      </div>
+      <div className="backdrop-blur-lg bg-white/30 p-8 border rounded-lg shadow-lg max-w-sm w-full">
+        <h2 className="text-2xl font-semibold text-white text-center mb-6">
           {isSigningIn ? "Sign In" : "Sign Up"}
         </h2>
 
@@ -115,7 +110,7 @@ const Signup = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 mt-4 rounded bg-purple-600 text-white font-semibold hover:bg-purple-700 transition disabled:bg-gray-500"
+            className="w-full py-2 mt-4 rounded bg-transparent border hover:text-black  text-white font-semibold hover:bg-gray-200 transition disabled:bg-gray-500"
           >
             {loading
               ? isSigningIn
@@ -129,7 +124,7 @@ const Signup = () => {
 
         <button
           onClick={handleGoogleLogin}
-          className="w-full py-2 mt-4 rounded bg-red-600 text-white font-semibold hover:bg-red-700 transition"
+          className="w-full py-2 mt-4 rounded bg-transparent border text-white font-semibold hover:bg-gray-200 hover:text-black transition"
         >
           Login with Google
         </button>
@@ -138,7 +133,7 @@ const Signup = () => {
           {isSigningIn ? "Don't have an account?" : "Already have an account?"}{" "}
           <button
             onClick={() => setIsSigningIn(!isSigningIn)}
-            className="text-purple-300 underline hover:text-purple-500"
+            className="text-purple-300 underline hover:text-blue-500"
           >
             {isSigningIn ? "Sign Up" : "Sign In"}
           </button>

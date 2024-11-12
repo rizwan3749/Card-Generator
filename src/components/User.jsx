@@ -1,8 +1,22 @@
-import React from "react";
+import { React, useState, useRef } from "react";
 import { CiCreditCard1 } from "react-icons/ci";
 import "./LandingPage.css"; 
 
 const user = () => {
+  const [showNotification, setShowNotification] = useState(false);
+  const emailInputRef = useRef(null);
+
+   const handleApplyClick = () => {
+     setShowNotification(true);
+     if (emailInputRef.current) {
+       emailInputRef.current.value = ""; 
+     }
+     setTimeout(() => {
+       setShowNotification(false);
+     }, 3000); // Hide notification after 3 seconds
+   };
+
+
   return (
     <div className="flex mt-44 justify-center items-center min-h-screen bg-gradient-to-br from-purple-800 via-purple-800 to-gray-900">
       <div className="relative p-10 bg-gradient-to-br from-gray-900 via-purple-800 to-gray-900 rounded-xl shadow-2xl h-[19rem] max-w-5xl mx-auto">
@@ -19,18 +33,29 @@ const user = () => {
             Free upgrade option to our platinum services and get lifetime
             validity.
           </p>
-
           {/* Form */}
-          <div className="mt-10">
+          <div className="mt-10 relative">
             <input
               type="email"
+              ref={emailInputRef}
               placeholder="Your Email"
               className="p-3 rounded-l-lg mt-0.5 mb-0.5 ml-0.5 justify-center text-gray-800 focus:outline-none"
             />
-            <button className="p-3 bg-purple-700 hover:bg-purple-800 text-white rounded-r-lg">
+            <button
+              onClick={handleApplyClick}
+              className="p-3 bg-purple-700 hover:bg-purple-800 text-white rounded-r-lg"
+            >
               APPLY
             </button>
             <p className="text-center ml-10">Hover Card</p>
+
+            {showNotification && (
+              <div className="absolute top-[-50px] left-0 right-0 flex justify-center">
+                <div className="p-3 bg-green-500 text-white rounded-lg shadow-lg">
+                  Thank you for applying!
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
